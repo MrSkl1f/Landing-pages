@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title>Нужно название</title>
+        <link rel="stylesheet" href="css/style.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <div class="wrapper">
+            <div class="title-text">
+                <div class="title input">Input Values</div>
+                <div class="title result">Result</div>
+            </div>
+            <div class="form-container">
+                <div class="slide-controls">
+                    <input type="radio" name="slide" id="input" checked>
+                    <input type="radio" name="slide" id="result">
+                    <label for="input" class="slide input">Input</label>
+                    <label for="result" class="slide result">Result</label>
+                    <div class="slider-tab"></div>
+                </div>
+                <div class="form-inner">
+                    <form action="#" class="input">
+                        <div class="field">
+                            <input type="education" placeholder="Education" required>
+                        </div>
+                        <div class="field">
+                            <input type="sex" placeholder="Sex" required>
+                        </div>
+                        <div class="field">
+                            <input type="age" placeholder="Age" required>
+                        </div>
+                        <div class="field">
+                            <input type="activity" placeholder="Activity" required>
+                        </div>
+                        <div class="field">
+                            <input type="sport" placeholder="Sport" required>
+                        </div>
+                        <div class="field">
+                            <input type="isalone" placeholder="IsAlone" required>
+                        </div>
+                        <div class="field">
+                            <input type="ageeducation" placeholder="Age*Education" required>
+                        </div>
+                        <div class="field btn">
+                            <div class="btn-layer"></div>
+                            <input type="submit" id="calculate" value="Calculate">
+                        </div>
+                    </form>
+                    <form action="#" class="result">
+                        <label class="output">Input</label>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <script>
+            const inputText = document.querySelector(".title-text .input");
+            const inputForm = document.querySelector("form.input");
+            const inputBtn = document.querySelector("label.input");
+            const resultBtn = document.querySelector("label.result");
+            const calcBtn = document.querySelector("input.submit");
+            resultBtn.onclick = (()=>{
+                inputForm.style.marginLeft = "-50%";
+                inputText.style.marginLeft = "-50%";
+            });
+            inputBtn.onclick = (()=>{
+                inputForm.style.marginLeft = "0%";
+                inputText.style.marginLeft = "0%";
+            });
+            calculate.onclick = (()=>{
+                resultBtn.click();
+                // ТУТ ЧТО-ТО ВЫПОЛНЯЕМ (ПОСЫЛАЕМ ЗАПРОСЫ ИЛИ ЧТО-ТО В ЭТОМ РОДЕ ДЛЯ ВЫЧИСЛЕНИЙ)
+            });
+        </script>
+    </body>
+</html>
