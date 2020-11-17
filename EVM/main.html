@@ -23,25 +23,25 @@
                 <div class="form-inner">
                     <form action="#" class="input">
                         <div class="field">
-                            <input type="education" placeholder="Education" required>
+                            <input id="education" placeholder="Education" required>
                         </div>
                         <div class="field">
-                            <input type="sex" placeholder="Sex" required>
+                            <input id="sex" placeholder="Sex" required>
                         </div>
                         <div class="field">
-                            <input type="age" placeholder="Age" required>
+                            <input id="age" placeholder="Age" required>
                         </div>
                         <div class="field">
-                            <input type="activity" placeholder="Activity" required>
+                            <input id="activity" placeholder="Activity" required>
                         </div>
                         <div class="field">
-                            <input type="sport" placeholder="Sport" required>
+                            <input id="sport" placeholder="Sport" required>
                         </div>
                         <div class="field">
-                            <input type="isalone" placeholder="IsAlone" required>
+                            <input id="isalone" placeholder="IsAlone" required>
                         </div>
                         <div class="field">
-                            <input type="ageeducation" placeholder="Age*Education" required>
+                            <input id="ageeducation" placeholder="Age*Education" required>
                         </div>
                         <div class="field btn">
                             <div class="btn-layer"></div>
@@ -56,6 +56,15 @@
         </div>
 
         <script>
+            function checkInput() {
+                let fields = ["education", "sex", "age", "activity", "sport", "isalone", "ageeducation"];
+                for (let i = 0; i < fields.length; i++) {
+                    if (!document.getElementById(fields[i]).value.length) {
+                        return false;
+                    }
+                }
+                return true;
+            }
             const inputText = document.querySelector(".title-text .input");
             const inputForm = document.querySelector("form.input");
             const inputBtn = document.querySelector("label.input");
@@ -70,7 +79,10 @@
                 inputText.style.marginLeft = "0%";
             });
             calculate.onclick = (()=>{
-                resultBtn.click();
+                if (checkInput()) {
+                    console.log("Yes");
+                    resultBtn.click();
+                }
                 // ТУТ ЧТО-ТО ВЫПОЛНЯЕМ (ПОСЫЛАЕМ ЗАПРОСЫ ИЛИ ЧТО-ТО В ЭТОМ РОДЕ ДЛЯ ВЫЧИСЛЕНИЙ)
             });
         </script>
